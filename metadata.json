@@ -1,0 +1,6 @@
+{
+  "name": "Orbita AI - Tradução Semântica",
+  "description": "Um tradutor inteligente focado em intenção semântica com interface minimalista e orb interativo.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": []
+}

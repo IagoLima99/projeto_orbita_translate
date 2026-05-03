@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  /* Typography */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  
+  /* Colors */
+  --color-bg-deep: #020205; /* Darker space base */
+  --color-accent-purple: #8B5CF6;
+  --color-accent-blue: #3B82F6;
+  --color-accent-amber: #F59E0B;
+  
+  /* Cosmic Background Layers */
+  --color-nebula-purple: rgba(139, 92, 246, 0.08);
+  --color-nebula-blue: rgba(59, 130, 246, 0.08);
+  --color-nebula-amber: rgba(245, 158, 11, 0.05);
+
+  /* Glassmorphism & UI */
+  --color-glass-bg: rgba(255, 255, 255, 0.02);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  
+  /* Radii */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-2xl: 40px;
+
+  /* Spacing */
+  --spacing-4xl: 4rem;
+}
+
+:root {
+  background-color: var(--color-bg-deep);
+  color: white;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;        /* prevent horizontal scroll */
+  overflow-y: auto;           /* allow vertical scroll for video scrub track */
+  scrollbar-width: none;      /* Firefox: hide scrollbar visually */
+  background: var(--color-bg-deep);
+}
+
+body::-webkit-scrollbar {
+  display: none;              /* Chrome/Safari: hide scrollbar visually */
+}
+
+/* Base Utility Classes */
+.glass-premium {
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid var(--color-glass-border);
+  box-shadow: 0 24px 64px -16px rgba(0, 0, 0, 0.8);
+}
+
+/* Accessibility & Focus */
+*:focus-visible {
+  outline: 2px solid var(--color-accent-purple);
+  outline-offset: 2px;
+}
+
+.orb-bloom {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, rgba(59, 130, 246, 0.2) 40%, transparent 70%);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
